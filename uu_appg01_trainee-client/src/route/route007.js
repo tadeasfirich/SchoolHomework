@@ -44,14 +44,11 @@ export default createReactClass({
   _addRow() {
     let id = UU5.Common.Tools.generateUUID();
     // díky CcrReader mixinu use můžeme ptát globálního registru na komponentu
-    let counter = this.getCcrComponentByKey("uu5TraineeCount");
-    // zvýšíme číslo v čítači
-    counter.increment();
     // a přidáme sloupec. Součástí sloupce je i callback metoda v onDelete, který nám zaručí jeho smazání.
     this._row.insertChild(
-      <h1>
+      <UU5.Bricks.Div>
         <UU5.Bricks.Label colorSchema='info' content='Some task' action="disabled" id={id} />
-      </h1>
+      </UU5.Bricks.Div>
     )
   },
   //@@viewOff:componentSpecificHelpers
@@ -60,11 +57,16 @@ export default createReactClass({
   render() {
     return (
       <UU5.Bricks.Div {...this.getMainPropsToPass()}>
+        <UU5.Forms.Text
+          label="Full name"
+          placeholder="John Smith"
+          required
+          ref_={input => this._input = input}
+        />
         <UU5.Bricks.Button
           colorSchema="success"
           onClick={this._addRow}
         />
-        <Counter ccrKey="uu5TraineeCount" />
         <UU5.Bricks.Row
           ref_={(cmp) => this._row = cmp}
           dynamic
