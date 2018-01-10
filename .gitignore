@@ -1,0 +1,15 @@
+.idea
+.tmp
+.history
+.vscode
+.project
+~*
+*.~*
+**/Gemfile.lock
+**/*.war
+**/node_modules
+**/dist
+**/public
+**/target
+**/cloud_config.json
+**/*log.*

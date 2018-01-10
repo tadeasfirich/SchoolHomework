@@ -1,0 +1,34 @@
+{
+  "itemList": [
+    {
+      "id": "a1",
+      "name": "Animals",
+      "desc": "",
+      "jokeCount": 1
+    },
+    {
+      "id": "b2",
+      "name": "Family",
+      "desc": "",
+      "jokeCount": 2
+    },
+    {
+      "id": "c3",
+      "name": "Office",
+      "desc": "",
+      "jokeCount": 1
+    },
+    {
+      "id": "d4",
+      "name": "Science",
+      "desc": "",
+      "jokeCount": 1
+    },
+    {
+      "id": "e5",
+      "name": "Sports",
+      "desc": "",
+      "jokeCount": 2
+    }
+  ]
+}

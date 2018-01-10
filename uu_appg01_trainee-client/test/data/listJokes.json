@@ -1,0 +1,44 @@
+{
+  "itemList": [
+    {
+      "id": "1a",
+      "name": "Keep trying",
+      "text": "If at first you don't succeed, skydiving is not for you!",
+      "averageRating": 4.3,
+      "ratingCount": 0,
+      "categories": ["e5"]
+    },
+    {
+      "id": "2b",
+      "name": "The way to fish",
+      "text": "Give a man a fish and he will eat for a day. Teach him how to fish and he will sit in a boat and drink beer all day.",
+      "averageRating": 3.1,
+      "ratingCount": 6,
+      "categories": ["a1"]
+    },
+    {
+      "id": "3c",
+      "name": "Know your limits",
+      "text": "You know you're getting old when your wife says, \"Honey, lets run upstairs and make love,\" and you answer, \"I can't do both.\"",
+      "averageRating": 1.6,
+      "ratingCount": 3,
+      "categories": ["b2", "e5"]
+    },
+    {
+      "id": "4d",
+      "name": "Sand",
+      "text": "What do you have when 100 lawyers are buried up to their necks in sand? Not enough sand.",
+      "averageRating": 3.3,
+      "ratingCount": 3,
+      "categories": ["c3"]
+    },
+    {
+      "id": "5e",
+      "name": "Dating",
+      "text": "When Magnesium and Oxygen started dating I was like, \"O MG!\"",
+      "averageRating": 4.0,
+      "ratingCount": 6,
+      "categories": ["b2", "d4"]
+    }
+  ]
+}

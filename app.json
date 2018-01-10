@@ -1,0 +1,9 @@
+{
+  "name": "uu_traineeappg01",
+  "namespace": "UU.Trainee",
+  "code": "UU.TRAINEEAPPG01",
+  "version": "0.1.0",
+  "description": "Project template for training UAF application with uu5.",
+  "vendor": "Unicorn a.s.",
+  "license": "UAF"
+}
