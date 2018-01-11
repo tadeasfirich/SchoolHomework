@@ -41,14 +41,14 @@ export default createReactClass({
   //@@viewOff:overridingMethods
 
   //@@viewOn:componentSpecificHelpers
-  _addRow() {
+  _addColumn() {
     let id = UU5.Common.Tools.generateUUID();
     // díky CcrReader mixinu use můžeme ptát globálního registru na komponentu
     // a přidáme sloupec. Součástí sloupce je i callback metoda v onDelete, který nám zaručí jeho smazání.
     this._row.insertChild(
-      <UU5.Bricks.Div>
-        <UU5.Bricks.Label colorSchema='info' content='Some task' action="disabled" id={id} />
-      </UU5.Bricks.Div>
+      <UU5.Bricks.Column colWidth="xs12" style="backgroundColor: grey;margin: 10px 0"  id={id}>
+        <UU5.Bricks.P>xs12</UU5.Bricks.P>
+      </UU5.Bricks.Column>
     )
   },
   //@@viewOff:componentSpecificHelpers
@@ -65,7 +65,7 @@ export default createReactClass({
         />
         <UU5.Bricks.Button
           colorSchema="success"
-          onClick={this._addRow}
+          onClick={this._addColumn}
         />
         <UU5.Bricks.Row
           ref_={(cmp) => this._row = cmp}
