@@ -2,6 +2,7 @@ import React from "react";
 import createReactClass from "create-react-class";
 import UU5 from "uu5g04";
 import "uu5g04-bricks";
+import Calls from "calls";
 
 import Counter from "../bricks/route003/counter.js";
 
@@ -12,7 +13,8 @@ export default createReactClass({
     UU5.Common.BaseMixin,
     UU5.Common.ElementaryMixin,
     UU5.Common.RouteMixin,
-    UU5.Common.CcrReaderMixin
+    UU5.Common.CcrReaderMixin,
+    UU5.Common.LoadMixin
   ],
   //@@viewOff:mixins
 
@@ -21,6 +23,10 @@ export default createReactClass({
     tagName: "UU5.Trainee.Route007",
     classNames: {
       main: "uu5-trainee-route007"
+    },
+    calls:{
+      onLoad:"listItems",
+      save:"createItem"
     }
   },
   //@@viewOff:statics
@@ -32,10 +38,11 @@ export default createReactClass({
   //@@viewOff:getDefaultProps
 
   //@@viewOn:standardComponentLifeCycle
-  getInitialState(){
-    return {
-      data:""
-    }
+  componentWillMount(){
+    /**
+     * Nastavení volání komponentě
+     */
+    this.setCalls(Calls);
   },
   //@@viewOff:standardComponentLifeCycle
 
@@ -67,8 +74,19 @@ export default createReactClass({
       </UU5.Bricks.Column>
     )
   },
+  //Ukládá do local storage
   _onSave(component, values) {
     this._addColumn(values);
+    this.getCall("save")({
+      data: values,
+      done:(dtoOut) =>{
+        this.setState({
+          feedback:"ready",
+          data:dtoOut
+        })
+      },
+      fail:() =>{console.error("what to do when request failed")}
+    });
     return this;
   },
   //@@viewOff:componentSpecificHelpers
