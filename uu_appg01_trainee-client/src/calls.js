@@ -29,10 +29,16 @@ let Calls = {
   createItem(dtoIn) {
     setTimeout(() => {
       let items = _getItems();
+      //console.log(items);
       items.push(dtoIn.data);
       _setItems(items);
       dtoIn.done(items);
     }, _getRandomResponseTime());
+  },
+
+  readItems(dtoIn) {
+    let items = _getItems();
+    return items;
   },
 
   resetItems(dtoIn) {
