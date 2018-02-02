@@ -45,9 +45,10 @@ export default createReactClass({
      * Nastavení volání komponentě
      */
     this.setCalls(Calls);
+    console.log("componentWillMount");
   },
   componentDidMount() {
-    console.log("Kukej");
+    console.log("componentDidMount");
     this._onLoadData();
   },
   //@@viewOff:standardComponentLifeCycle
@@ -71,11 +72,7 @@ export default createReactClass({
 
   _deleteItem(id, values) {
     var deletedElement = this.getCall("remove")(id, values);
-
-    // console.log(id);
-    // values.forEach(function(element) {
-    //   console.log(element);
-    // });
+    this._row.deleteChild(id);
   },
 
   _addColumn(values) {
