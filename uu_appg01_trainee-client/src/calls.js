@@ -37,8 +37,21 @@ let Calls = {
   },
 
   readItems(dtoIn) {
-    let items = _getItems();
-    return items;
+    return _getItems();
+  },
+
+  removeItem(id, allValues) {
+    console.log(id);
+    console.log(allValues);
+    let index;
+    allValues.map((value) => {
+      if (value.id === id) {
+        index = allValues.indexOf(value);
+      }
+    });
+    allValues.splice(index, 1);
+    console.log(allValues);
+    _setItems(allValues);
   },
 
   resetItems(dtoIn) {

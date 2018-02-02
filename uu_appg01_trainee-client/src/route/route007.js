@@ -28,6 +28,7 @@ export default createReactClass({
       onLoad:"listItems",
       save:"createItem",
       load:"readItems",
+      remove: "removeItem",
     }
   },
   //@@viewOff:statics
@@ -69,14 +70,16 @@ export default createReactClass({
   },
 
   _deleteItem(id, values) {
-    console.log(id);
-    values.forEach(function(element) {
-      console.log(element);
-    });
+    var deletedElement = this.getCall("remove")(id, values);
+
+    // console.log(id);
+    // values.forEach(function(element) {
+    //   console.log(element);
+    // });
   },
 
   _addColumn(values) {
-    console.log("Hovno: " + values.name);
+    //console.log("Hovno: " + values.name);
     let id = UU5.Common.Tools.generateUUID();
     //console.log(id);
     // díky CcrReader mixinu use můžeme ptát globálního registru na komponentu
@@ -116,7 +119,7 @@ export default createReactClass({
   //Load from localStorage
   _onLoadData() {
     var allData = this.getCall("load")();
-    console.log(allData.length);
+    //console.log(allData);
     return allData.map((values) => {
       let key = UU5.Common.Tools.generateUUID();
       return(
@@ -124,7 +127,7 @@ export default createReactClass({
           <UU5.Bricks.P>{values.name}</UU5.Bricks.P>
           <UU5.Bricks.Button
             colorSchema="danger"
-            onClick={() => this._deleteItem(values.id, values)}//this._row.deleteChild(id)}
+            onClick={() => this._deleteItem(values.id, allData)}//this._row.deleteChild(id)}
             content="Delete Column"
           />
           <UU5.Bricks.Button
